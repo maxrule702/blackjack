@@ -1,0 +1,20 @@
+package com.company;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int user;
+    int totaldealer = 0;
+        Random random = new Random();
+        System.out.println("Hello and welcome to a game of black jack!");
+        Scanner input = new Scanner(System.in);
+        while (totaldealer != 22);
+        int dealer = random.nextInt(11);
+        int dealer2 = random.nextInt(11);
+        totaldealer = dealer + dealer2;
+        System.out.println(totaldealer);
+    }
+}
