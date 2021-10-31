@@ -6,15 +6,66 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	int user;
-    int totaldealer = 0;
+        int placeholder = 0;
+        int placeholder1 = 0;
+        int mainloop = 0;
+        int totalUser = 0;
+        int totaldealer = 0;
+        int placeholder2= 0;
         Random random = new Random();
         System.out.println("Hello and welcome to a game of black jack!");
         Scanner input = new Scanner(System.in);
-        while (totaldealer != 22);
-        int dealer = random.nextInt(11);
-        int dealer2 = random.nextInt(11);
-        totaldealer = dealer + dealer2;
-        System.out.println(totaldealer);
+
+            while (placeholder != 1) {
+                int dealer = random.nextInt(10)+1;
+                int dealer2 = random.nextInt(10)+1  ;
+                 totaldealer = dealer + dealer2;
+                if (totaldealer > 21) {
+                    System.out.println("dealer has gone broke");
+                    //System.out.println(totaldealer);
+                    placeholder++;
+                } else if (totaldealer < 21) {
+                    //System.out.println(totaldealer);
+                    placeholder++;
+                }
+
+
+                while (placeholder1 != 1) {
+                    int user1 = random.nextInt(10)+1;
+                    int user2 = random.nextInt(10)+1;
+                    totalUser = user1 + user2;
+                    if (totalUser > 21) {
+                        System.out.println("you have gone broke");
+                        System.out.println(totalUser);
+                        placeholder1++;
+
+                    } else if (totaldealer < 21) {
+                        System.out.println(totalUser);
+                        placeholder1++;
+                    }
+
+                }
+            }
+
+            while (placeholder2 != 1) {
+                System.out.println("would you like to draw another card?");
+                String userInput = input.next();
+                if (userInput.equals("yes")) {
+                    int nextDraw = random.nextInt(10)+1;
+                    totalUser = totalUser + nextDraw;
+                    System.out.println("your total is " + totalUser);
+                }
+                if (totalUser > 21){
+                        System.out.println("You've gone broke");
+                        placeholder2++;
+                    }
+                else if (userInput.equals("no")){
+                        placeholder2++;
+
+
+                     }
+
+            }
+
     }
 }
